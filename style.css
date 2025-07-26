@@ -1,11 +1,9 @@
 /*start_of Fonts Used*/
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
-@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.0/font/bootstrap-icons.css");
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&family=Fredoka:wght@300..700&display=swap');
 
 /*
-font-family: 'Poppins', sans-serif;
-font-family: 'Questrial', sans-serif;
+font-family: "Baloo 2", sans-serif;
+font-family: "Fredoka", sans-serif;
 */
 
 /* @font-face {
@@ -28,12 +26,16 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 
 /* HTML5 display-role reset for older browsers */
 html {width: 100%; height: 100%;}
-body {width: 100%;height: 100%;display: flex;justify-content: center;/* align-items: center; */background-color: #f5f3ef;}
+body {width: 100%;height: 100%;display: flex;justify-content: center;/* align-items: center; */background-color: #f5f3ef; font-family: "Fredoka", sans-serif;}
 #outer_con {width: 454px;height: 603px;background: #80909C;justify-content: center;border-radius: 45px;margin-top: 158px;display: flex;padding-top: 13px;}
 #inner_con {width: 426px;height: 576px;background: #d0d9da;border-top-right-radius: 31px;border-top-left-radius: 31px;border-bottom-left-radius: 31px;border-bottom-right-radius: 38px;padding-top: 25px;}
 #screen_outer {width: 382px;height: 103px;background-color: #7c8f9b;margin: 0 auto;display: flex;justify-content: center;border-top-right-radius: 20px;border-top-left-radius: 20px;border-bottom-left-radius: 22px;border-bottom-right-radius: 22px;padding-top: 8px;}
 #screen_inner {width: 366px;height: 88px;background-color: #b7d5ca;border-top-right-radius: 14px;border-top-left-radius: 14px;border-bottom-left-radius: 14px;border-bottom-right-radius: 14px;}
 
-#btn_con {width: 376px;min-height: 379px;/* background: green; */margin: 0 auto;margin-top: 31px;}
+#btn_con {width: 376px;min-height: 379px;/* background: green; */margin: 0 auto;margin-top: 31px;  }
 .btn_holder {width: 86px;height: 70px;background-color: #708590;display: flex;justify-content: center;border-radius: 19px 19px 24px 24px;}
-.btn_holder .btn {width: 75px;height: 58px;background-color: #89b2a9;border-radius: 12px 12px 19px 19px;border: 0px;margin-top: 6px;}
+.btn_rows {display: flex; justify-content: space-between;}
+.btn_holder .btn {width: 75px;height: 58px;background-color: #89b2a9;border-radius: 12px 12px 19px 19px;border: 0px;margin-top: 6px;font-family: "Baloo 2", sans-serif;color: #fff;font-size:40px;font-weight: 700;line-height: 100%;}
+#row2 {margin-top: 11px;}
+#row2 .btn_holder {height: 75px;border-radius: 21px 21px 24px 24px;}
+#row2 .btn {height: 62px;border-radius;: ;border-radius: 12px 12px 14px 14px;}
