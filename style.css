@@ -29,13 +29,44 @@ html {width: 100%; height: 100%;}
 body {width: 100%;height: 100%;display: flex;justify-content: center;/* align-items: center; */background-color: #f5f3ef; font-family: "Fredoka", sans-serif;}
 #outer_con {width: 454px;height: 603px;background: #80909C;justify-content: center;border-radius: 45px;margin-top: 158px;display: flex;padding-top: 13px;}
 #inner_con {width: 426px;height: 576px;background: #d0d9da;border-top-right-radius: 31px;border-top-left-radius: 31px;border-bottom-left-radius: 31px;border-bottom-right-radius: 38px;padding-top: 25px;}
-#screen_outer {width: 382px;height: 103px;background-color: #7c8f9b;margin: 0 auto;display: flex;justify-content: center;border-top-right-radius: 20px;border-top-left-radius: 20px;border-bottom-left-radius: 22px;border-bottom-right-radius: 22px;padding-top: 8px;}
-#screen_inner {width: 366px;height: 88px;background-color: #b7d5ca;border-top-right-radius: 14px;border-top-left-radius: 14px;border-bottom-left-radius: 14px;border-bottom-right-radius: 14px;}
+#screen_outer {width: 382px;height: 103px;background-color: #7c8f9b;margin: 0 auto;display: flex;justify-content: center;padding-top: 8px; border-radius: 20px 20px 22px 22px; 
+	box-shadow: 0 2px 4px rgba(255, 255, 255, 0.6); /* white-ish bottom glow */
+	box-shadow:
+    inset 0 -3px 5px rgba(0, 0, 0, 0.25),  /* bottom shadow inside */
+    inset 0 3px 5px rgba(0, 0, 0, 0.3);    /* top shadow for sunken effect */
+}
+#screen_inner {width: 366px;height: 88px;background-color: #b7d5ca; border-radius: 14px;
+
+}
 
 #btn_con {width: 376px;min-height: 379px;/* background: green; */margin: 0 auto;margin-top: 31px;  }
-.btn_holder {width: 86px;height: 70px;background-color: #708590;display: flex;justify-content: center;border-radius: 19px 19px 24px 24px;}
 .btn_rows {display: flex; justify-content: space-between;}
-.btn_holder .btn {width: 75px;height: 58px;background-color: #89b2a9;border-radius: 12px 12px 19px 19px;border: 0px;margin-top: 6px;font-family: "Baloo 2", sans-serif;color: #fff;font-size:40px;font-weight: 700;line-height: 100%;}
+.btn_holder {width: 86px;height: 70px;background-color: #708590;display: flex;justify-content: center;border-radius: 19px 19px 24px 24px;
+
+	/* ---------- EXTRA DESIGN -------------- */
+	box-shadow: 
+    inset 2px 2px 3px rgba(255, 255, 255, 0.3),  /* light top-left inner bevel */
+    inset -2px -2px 4px rgba(0, 0, 0, 0.3);      /* dark bottom-right inner bevel */
+	/* ---------- EXTRA DESIGN -------------- */
+}
+
+.btn_holder .btn:active {
+  transform: translateY(1px); /* press-down effect */
+}
+
+.btn_holder .btn {width: 75px;height: 58px;background-color: #89b2a9;border-radius: 12px 12px 19px 19px;border: 0px;margin-top: 6px;font-family: "Baloo 2", sans-serif;color: #fff;font-size:40px;font-weight: 700;line-height: 100%;
+
+	/* ---------- EXTRA DESIGN -------------- */
+	/* INNER SHADOW for "pressed-in" feel */
+  	box-shadow:
+    inset 0 -3px 4px rgba(0, 0, 0, 0.2),    /* bottom inner shadow */
+    inset 0 3px 4px rgba(255, 255, 255, 0.4); /* top highlight */
+	transition: transform 0.1s ease-in-out;
+	/* ---------- EXTRA DESIGN -------------- */
+}
+
+
+
 #row2 {margin-top: 11px;}
 #row2 .btn_holder, #row3 .btn_holder, #row4 .btn_holder {height: 74px;border-radius: 21px 21px 22px 22px;}
 #row2 .btn, #row3 .btn, #row4 .btn {height: 62px;border-radius: 14px 14px 15px 15px;}
