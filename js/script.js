@@ -24,16 +24,25 @@ btn_con.addEventListener('click', displayValues);
 // });
 
 let checkOperator = false;
+let operatorClicked;
 function displayValues(e) {
 	const isClickedButton = e.target.closest('button');
 	if(!isClickedButton) { return }
 	let splitId = e.target.id.split('btn');
 	let id = splitId[1];
+	
+
 	if(!isNaN(id)) {
+		operatorClicked ? operatorClicked.classList.remove('lit-up') : false;
+
 		if(checkOperator == true) { display.textContent = 0; checkOperator = false; }
 		if(display.textContent == '0') { display.textContent = ''; }
 		display.textContent += id;
 	} else {
+		if(!operatorClicked) {operatorClicked = document.querySelector(`#` + e.target.id);}
+		operatorClicked = document.querySelector(`#` + e.target.id);
+		operatorClicked.classList.add('lit-up');
+		console.log(operatorClicked);
 		calculate(id, parseInt(display.textContent));
 	}
 }
