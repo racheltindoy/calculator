@@ -29,11 +29,11 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 /* HTML5 display-role reset for older browsers */
 html {width: 100%; height: 100%;}
 body {width: 100%;height: 100%;display: flex;justify-content: center;/* align-items: center; */background-color: #f5f3ef;}
-#outer_con {width: 680px;height: 904px;background: #80909C;justify-content: center;border-radius: 65px;margin-top: 24px;display: flex;padding: 20px 20px 20px;}
-#inner_con {width: 638px;height: 864px;background: #d0d9da;border-radius: 45px;padding: 37px 5px 15px;}
-#screen_outer {width: 573px;height: 155px;background-color: #7c8f9b;margin: 0 auto;display: flex;justify-content: center;border-radius: 35px;padding: 12px;}
-#screen_inner {width: 553px;height: 132px;background-color: #b7d5ca;border-radius: 25px;}
+#outer_con {width: 454px;height: 603px;background: #80909C;justify-content: center;border-radius: 45px;margin-top: 158px;display: flex;padding-top: 13px;}
+#inner_con {width: 426px;height: 576px;background: #d0d9da;border-top-right-radius: 31px;border-top-left-radius: 31px;border-bottom-left-radius: 31px;border-bottom-right-radius: 38px;padding-top: 25px;}
+#screen_outer {width: 382px;height: 103px;background-color: #7c8f9b;margin: 0 auto;display: flex;justify-content: center;border-top-right-radius: 20px;border-top-left-radius: 20px;border-bottom-left-radius: 22px;border-bottom-right-radius: 22px;padding-top: 8px;}
+#screen_inner {width: 366px;height: 88px;background-color: #b7d5ca;border-top-right-radius: 14px;border-top-left-radius: 14px;border-bottom-left-radius: 14px;border-bottom-right-radius: 14px;}
 
-#btn_con {width: 565px;min-height: 599px;background: yellow;margin: 0 auto;margin-top: 47px;}
-.btn_holder {width: 129px;height: 103px;background-color: #708590;display: flex;justify-content: center;align-items: center;border-radius: 30px 30px 35px 35px;}
-.btn_holder .btn {width: 112px;height: 85px;background-color: #89b2a9;border-radius: 22px;border: 0px;}
+#btn_con {width: 376px;min-height: 379px;/* background: green; */margin: 0 auto;margin-top: 31px;}
+.btn_holder {width: 86px;height: 70px;background-color: #708590;display: flex;justify-content: center;border-radius: 19px 19px 24px 24px;}
+.btn_holder .btn {width: 75px;height: 58px;background-color: #89b2a9;border-radius: 12px 12px 19px 19px;border: 0px;margin-top: 6px;}
