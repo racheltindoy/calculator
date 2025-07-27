@@ -2,11 +2,11 @@ const btn_con = document.querySelector('#btn_con');
 const display = document.querySelector('#display');
 display.textContent = '0';
 
-
 btn_con.addEventListener('click', displayValues);
 
 let isOperatorClicked = false;
 let operatorClicked;
+
 function displayValues(e) {
 	const isClickedButton = e.target.closest('button');
 	if(!isClickedButton) { return }
@@ -22,13 +22,8 @@ function displayValues(e) {
 		if(display.textContent == '0') { display.textContent = ''; }
 		display.textContent += id;
 		
-		// if(val1 !== null && val2 === null) { display.textContent = ''; display.textContent += id; }
-		
 		if(val2 !== null) {val2 = parseInt(display.textContent); } 
-	
-		console.log('VAL1: ' + val1);
-		console.log('VAL2: ' + val2);
-		console.log("--------------------------")
+		
 	}
 	else if(id === 'AC') { resetValues(); } 
 	else if (id === 'Del') { removeLastDigit(); } 
@@ -53,13 +48,6 @@ function displayValues(e) {
 			operatorSelected = id;
 		}
 
-		console.log(operatorSelected);
-		console.log('VAL1: ' + val1);
-		console.log('VAL2: ' + val2);
-		console.log("RESULT: " + result);
-		// console.log("--------------------------")
-
-
 		display.textContent = result;
 		
 	}
@@ -71,7 +59,6 @@ let val2 = null;
 let operatorSelected = null;
 
 function calculate() {
-	
 	switch(operatorSelected) {
 		case 'Add': 
 			result = val1+val2;
