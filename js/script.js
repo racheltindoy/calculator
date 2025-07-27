@@ -34,7 +34,10 @@ function displayValues(e) {
 		resetValues();
 	} else if (id === 'Del') {
 		let displayLength = display.textContent.length
-		console.log(display.textContent[displayLength-1]);
+		// console.log(display.textContent.slice(0, -1));
+		let newDisplay = display.textContent = display.textContent.slice(0, -1);
+		val1 = parseInt(newDisplay);
+		console.log("VAL1 NEW DISPLAY: " + val1);
 	} else {
 		// Removes operator highlight when another operator is pressed
 		if(isOperatorClicked == true) {
@@ -61,7 +64,6 @@ function displayValues(e) {
 		console.log('VAL2: ' + val2);
 		console.log("RESULT: " + result);
 		// console.log("--------------------------")
-
 
 
 		display.textContent = result;
