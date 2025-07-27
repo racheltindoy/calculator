@@ -39,7 +39,7 @@ function displayValues(e) {
 
 		lightUpButton(e);
 		
-		if(val1 === null) {val1 = parseInt(display.textContent);} 
+		if(val1 === null) {val1 = parseInt(display.textContent); } 
 		else { val2 = parseInt(display.textContent);  }
 
 		// Initialize operator
@@ -52,7 +52,6 @@ function displayValues(e) {
 		}
 
 		display.textContent = result;
-		
 	}
 }
 
@@ -89,8 +88,13 @@ function calculate() {
 }
 
 function removeLastDigit() {
-	let newDisplay = display.textContent = display.textContent.slice(0, -1);
-	val1 = parseInt(newDisplay);
+	display.textContent = display.textContent.slice(0, -1);
+	let newDisplay = display.textContent;
+	console.log(newDisplay.length);
+
+	if(newDisplay.length === 0) {
+		resetValues();
+	} else {val1 = parseInt(newDisplay);}
 }
 
 function resetValues() {
