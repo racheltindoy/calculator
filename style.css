@@ -38,7 +38,9 @@ body {width: 100%;height: 100%;display: flex;justify-content: center;/* align-it
     inset 0 3px 5px rgba(0, 0, 0, 0.3);    /* top shadow for sunken effect */
 	/* ---------- END EXTRA DESIGN -------------- */
 }
-#screen_inner {width: 366px;height: 88px;background-color: #b7d5ca;border-radius: 14px;display: flex;align-items: center;justify-content: flex-end;}
+#screen_inner {width: 366px;height: 88px;background-color: #b7d5ca;border-radius: 14px;display: flex;align-items: center;justify-content: flex-end; overflow-x: hidden; padding: 10px;}
+
+#display {color: #535353; font-size: 50px;}
 
 #btn_con {width: 376px;min-height: 379px;/* background: green; */margin: 0 auto;margin-top: 31px;  }
 .btn_rows {display: flex; justify-content: space-between;}
