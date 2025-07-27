@@ -36,6 +36,11 @@ function displayValues(e) {
 	}
 	else if(id === 'AC') { resetValues(); } 
 	else if (id === 'Del') { removeLastDigit(); } 
+	else if(id === 'Point') {
+		if (!display.textContent.includes('.')) {
+			display.textContent += '.';
+		} else { return; }
+	}
 	else {
 		if(display.textContent == '0' && val1 === null) { return; }
 		
@@ -48,8 +53,8 @@ function displayValues(e) {
 
 		lightUpButton(e);
 		
-		if(val1 === null) {val1 = parseInt(display.textContent); isVal1Set = true;  } 
-		else { val2 = parseInt(display.textContent);  }
+		if(val1 === null) {val1 = parseFloat(display.textContent); isVal1Set = true;  } 
+		else { val2 = parseFloat(display.textContent);  }
 
 
 		if(isVal1Set) {
@@ -111,7 +116,7 @@ function removeLastDigit() {
 
 	if(newDisplay.length === 0) {
 		resetValues();
-	} else {val1 = parseInt(newDisplay);}
+	} else {val1 = parseFloat(newDisplay);}
 }
 
 function resetValues() {
