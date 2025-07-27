@@ -44,10 +44,12 @@ function calculate(operator, displayValue) {
 		case 'Add': 
 			result = val1+val2;
 			val1 = result;
+			val2 = null;
 			break;
 		case 'Subtract':
 			result = val1-val2;
 			val1 = result;
+			val2 = null;
 			break;
 	}
 	// console.log("RESULT: " + result);
@@ -62,7 +64,6 @@ function calculate(operator, displayValue) {
 
 
 function lightUpButton(e) {
-	
 	if(!operatorClicked) {operatorClicked = document.querySelector(`#` + e.target.id);}
 	operatorClicked = document.querySelector(`#` + e.target.id);
 	operatorClicked.classList.add('lit-up');
