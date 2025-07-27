@@ -35,17 +35,20 @@ function displayValues(e) {
 		else { val2 = parseInt(display.textContent); }
 
 		// Initialize operator
-		if(!operatorSelected) { operatorSelected = id; }
-		console.log(operatorSelected);
-		
-		if(val2 != null) {calculate(); }
+		if(!operatorSelected) { 
+			operatorSelected = id; 
+			if(val2 != null) {calculate(); }
+		} else {
+			if(val2 != null) {calculate()};
+			operatorSelected = id;
+		}
 
+		console.log(operatorSelected);
 		console.log('VAL1: ' + val1);
 		console.log('VAL2: ' + val2);
 		// console.log("--------------------------")
 
 		display.textContent = result;
-		
 	}
 }
 
