@@ -28,12 +28,15 @@ function displayValues(e) {
 	else if(id === 'AC') { resetValues(); } 
 	else if (id === 'Del') { removeLastDigit(); } 
 	else {
+		if(display.textContent == '0' && val1 === null) { return; }
+		
 		// Removes operator highlight when another operator is pressed
 		if(isOperatorClicked == true) {
 			lightUpButton(e); 
 			operatorSelected = id;
 			return;
 		}
+
 		lightUpButton(e);
 		
 		if(val1 === null) {val1 = parseInt(display.textContent);} 
@@ -99,6 +102,7 @@ function resetValues() {
 	operatorClicked = null;
 	display.textContent = '0';
 }
+
 
 function lightUpButton(e) {
 	if(!operatorClicked) {operatorClicked = document.querySelector(`#` + e.target.id);}
