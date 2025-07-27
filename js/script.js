@@ -13,8 +13,6 @@ function displayValues(e) {
 	if(!isClickedButton) { return }
 	let splitId = e.target.id.split('btn');
 	let id = splitId[1];
-
-	
 	
 	// Removes operator highlight when digit is pressed
 	lightOffButton();
@@ -32,14 +30,12 @@ function displayValues(e) {
 			display.textContent += id;
 		}
 
-		
 	}
 	else if(id === 'AC') { resetValues(); } 
 	else if (id === 'Del') { removeLastDigit(); } 
 	else if(id === 'Point') {
-		if (!display.textContent.includes('.')) {
-			display.textContent += '.';
-		} else { return; }
+		if (!display.textContent.includes('.')) { display.textContent += '.'; } 
+		else { return; }
 	}
 	else {
 		if(display.textContent == '0' && val1 === null) { return; }
