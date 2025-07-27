@@ -6,12 +6,15 @@ btn_con.addEventListener('click', displayValues);
 
 let isOperatorClicked = false;
 let operatorClicked;
+let isVal1Set = false;
 
 function displayValues(e) {
 	const isClickedButton = e.target.closest('button');
 	if(!isClickedButton) { return }
 	let splitId = e.target.id.split('btn');
 	let id = splitId[1];
+
+	
 	
 	// Removes operator highlight when digit is pressed
 	lightOffButton();
@@ -20,9 +23,15 @@ function displayValues(e) {
 		// Reset display
 		if(isOperatorClicked == true) { display.textContent = 0; isOperatorClicked = false; }
 		if(display.textContent == '0') { display.textContent = ''; }
-		display.textContent += id;
-		
-		if(val2 !== null) {val2 = parseInt(display.textContent); } 
+
+		if(isVal1Set) {
+			isVal1Set = false;
+			display.textContent = '';
+			display.textContent += id;
+		} else {
+			display.textContent += id;
+		}
+
 		
 	}
 	else if(id === 'AC') { resetValues(); } 
@@ -39,8 +48,14 @@ function displayValues(e) {
 
 		lightUpButton(e);
 		
-		if(val1 === null) {val1 = parseInt(display.textContent); } 
+		if(val1 === null) {val1 = parseInt(display.textContent); isVal1Set = true;  } 
 		else { val2 = parseInt(display.textContent);  }
+
+
+		if(isVal1Set) {
+			result = val1;
+			display.textContent = result;
+		}
 
 		// Initialize operator
 		if(!operatorSelected) { 
@@ -61,6 +76,8 @@ let val2 = null;
 let operatorSelected = null;
 
 function calculate() {
+	if(val2 === null) { display.textContent = val1; }
+
 	switch(operatorSelected) {
 		case 'Add': 
 			result = val1+val2;
@@ -104,6 +121,7 @@ function resetValues() {
 	operatorSelected = null;
 	isOperatorClicked = false;
 	operatorClicked = null;
+	isVal1Set = false;
 	display.textContent = '0';
 }
 
