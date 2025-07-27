@@ -25,7 +25,7 @@ function displayValues(e) {
 		if(val2 != null) {val2 = parseInt(display.textContent);} 
 		console.log('VAL1: ' + val1);
 		console.log('VAL2: ' + val2);
-		// console.log("--------------------------")
+		console.log("--------------------------")
 		
 	} else {
 		// Removes operator highlight when another operator is pressed
@@ -52,18 +52,13 @@ function displayValues(e) {
 	}
 }
 
-let result = 0;
-let result2;
+let result = null;
 let val1 = null;
 let val2 = null;
 let operatorSelected = null;
 
 function calculate() {
 	
-	// console.log("RESULT: " + result);
-	// console.log("VAL1: " + val1);
-	// console.log("VAL2: " + val2);
-	// console.log("--------------------------");
 	switch(operatorSelected) {
 		case 'Add': 
 			result = val1+val2;
@@ -76,12 +71,8 @@ function calculate() {
 			val2 = null;
 			break;
 	}
-	// console.log("RESULT: " + result);
-	// console.log("VAL1: " + val1);
-	// console.log("VAL2: " + val2);
-	// console.log("========================");
 
-	
+
 	isOperatorClicked = true;
 }
 
