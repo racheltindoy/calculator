@@ -22,7 +22,10 @@ function displayValues(e) {
 		if(display.textContent == '0') { display.textContent = ''; }
 		display.textContent += id;
 		
-		if(val2 !== null) {val2 = parseInt(display.textContent);} 
+		if(val1 !== null && val2 === null) { display.textContent = ''; display.textContent += id; }
+		
+		if(val2 !== null) {val2 = parseInt(display.textContent); } 
+	
 		console.log('VAL1: ' + val1);
 		console.log('VAL2: ' + val2);
 		console.log("--------------------------")
@@ -35,25 +38,31 @@ function displayValues(e) {
 			return;
 		}
 		lightUpButton(e);
-
+		
 		if(val1 === null) {val1 = parseInt(display.textContent);} 
-		else { val2 = parseInt(display.textContent); }
+		else { val2 = parseInt(display.textContent);  }
 
 		// Initialize operator
 		if(!operatorSelected) { 
 			operatorSelected = id; 
 			if(val2 !== null) {calculate(); }
 		} else {
-			if(val2 !== null) {calculate()};
+			if(val2 !== null) {calculate(); };
 			operatorSelected = id;
 		}
 
 		console.log(operatorSelected);
 		console.log('VAL1: ' + val1);
 		console.log('VAL2: ' + val2);
+		console.log("RESULT: " + result);
 		// console.log("--------------------------")
 
-		display.textContent = result;
+		if(result === null) {console.log("NULL PA ANG RESULT MADAM: ", + result); display.textContent = val1;}
+
+		if(result === null) {display.textContent = val1;} else {
+			display.textContent = result;
+		}
+		
 	}
 }
 
