@@ -36,7 +36,7 @@ function displayValues(e) {
 		}
 		lightUpButton(e);
 
-		if(!val1) {val1 = parseInt(display.textContent);} 
+		if(val1 === null) {val1 = parseInt(display.textContent);} 
 		else { val2 = parseInt(display.textContent); }
 
 		// Initialize operator
