@@ -22,13 +22,18 @@ function displayValues(e) {
 		if(display.textContent == '0') { display.textContent = ''; }
 		display.textContent += id;
 		
-		if(val2 != null) {val2 = parseInt(display.textContent);} 
+		if(val2 !== null) {val2 = parseInt(display.textContent);} 
 		console.log('VAL1: ' + val1);
 		console.log('VAL2: ' + val2);
 		console.log("--------------------------")
 		
 	} else {
 		// Removes operator highlight when another operator is pressed
+		if(isOperatorClicked == true) {
+			lightUpButton(e); 
+			operatorSelected = id;
+			return;
+		}
 		lightUpButton(e);
 
 		if(!val1) {val1 = parseInt(display.textContent);} 
@@ -37,9 +42,9 @@ function displayValues(e) {
 		// Initialize operator
 		if(!operatorSelected) { 
 			operatorSelected = id; 
-			if(val2 != null) {calculate(); }
+			if(val2 !== null) {calculate(); }
 		} else {
-			if(val2 != null) {calculate()};
+			if(val2 !== null) {calculate()};
 			operatorSelected = id;
 		}
 
@@ -70,8 +75,17 @@ function calculate() {
 			val1 = result;
 			val2 = null;
 			break;
+		case 'Multiply':
+			result = val1*val2;
+			val1 = result;
+			val2 = null;
+			break;
+		case 'Divide':
+			result = val1/val2;
+			val1 = result;
+			val2 = null;
+			break;
 	}
-
 
 	isOperatorClicked = true;
 }
