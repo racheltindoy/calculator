@@ -21,26 +21,47 @@ function displayValues(e) {
 		if(isOperatorClicked == true) { display.textContent = 0; isOperatorClicked = false; }
 		if(display.textContent == '0') { display.textContent = ''; }
 		display.textContent += id;
+		
+		if(val2 != null) {val2 = parseInt(display.textContent);} 
+		console.log('VAL1: ' + val1);
+		console.log('VAL2: ' + val2);
+		// console.log("--------------------------")
+		
 	} else {
 		// Removes operator highlight when another operator is pressed
 		lightUpButton(e);
-		calculate(id, parseInt(display.textContent));
+
+		if(!val1) {val1 = parseInt(display.textContent);} 
+		else { val2 = parseInt(display.textContent); }
+
+		// Initialize operator
+		if(!operatorSelected) { operatorSelected = id; }
+		console.log(operatorSelected);
+		
+		if(val2 != null) {calculate(); }
+
+		console.log('VAL1: ' + val1);
+		console.log('VAL2: ' + val2);
+		// console.log("--------------------------")
+
+		display.textContent = result;
 		
 	}
 }
 
 let result = 0;
 let result2;
-let val1;
-let val2;
+let val1 = null;
+let val2 = null;
+let operatorSelected = null;
 
-function calculate(operator, displayValue) {
-	if(!val1) {val1 = displayValue; val2 = 0; } else { val2 = displayValue;  }
+function calculate() {
+	
 	// console.log("RESULT: " + result);
 	// console.log("VAL1: " + val1);
 	// console.log("VAL2: " + val2);
 	// console.log("--------------------------");
-	switch(operator) {
+	switch(operatorSelected) {
 		case 'Add': 
 			result = val1+val2;
 			val1 = result;
@@ -53,11 +74,11 @@ function calculate(operator, displayValue) {
 			break;
 	}
 	// console.log("RESULT: " + result);
-	console.log("VAL1: " + val1);
-	console.log("VAL2: " + val2);
-	console.log("========================");
+	// console.log("VAL1: " + val1);
+	// console.log("VAL2: " + val2);
+	// console.log("========================");
 
-	display.textContent = result;
+	
 	isOperatorClicked = true;
 }
 
