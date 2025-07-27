@@ -22,7 +22,7 @@ function displayValues(e) {
 		if(display.textContent == '0') { display.textContent = ''; }
 		display.textContent += id;
 		
-		if(val1 !== null && val2 === null) { display.textContent = ''; display.textContent += id; }
+		// if(val1 !== null && val2 === null) { display.textContent = ''; display.textContent += id; }
 		
 		if(val2 !== null) {val2 = parseInt(display.textContent); } 
 	
@@ -30,6 +30,11 @@ function displayValues(e) {
 		console.log('VAL2: ' + val2);
 		console.log("--------------------------")
 		
+	} else if(id === 'AC') {
+		resetValues();
+	} else if (id === 'Del') {
+		let displayLength = display.textContent.length
+		console.log(display.textContent[displayLength-1]);
 	} else {
 		// Removes operator highlight when another operator is pressed
 		if(isOperatorClicked == true) {
@@ -57,11 +62,9 @@ function displayValues(e) {
 		console.log("RESULT: " + result);
 		// console.log("--------------------------")
 
-		if(result === null) {console.log("NULL PA ANG RESULT MADAM: ", + result); display.textContent = val1;}
 
-		if(result === null) {display.textContent = val1;} else {
-			display.textContent = result;
-		}
+
+		display.textContent = result;
 		
 	}
 }
@@ -99,7 +102,15 @@ function calculate() {
 	isOperatorClicked = true;
 }
 
-
+function resetValues() {
+	result = null;
+	val1 = null;
+	val2 = null;
+	operatorSelected = null;
+	isOperatorClicked = false;
+	operatorClicked = null;
+	display.textContent = '0';
+}
 
 function lightUpButton(e) {
 	if(!operatorClicked) {operatorClicked = document.querySelector(`#` + e.target.id);}
