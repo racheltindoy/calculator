@@ -81,22 +81,23 @@ function calculate() {
 
 	switch(operatorSelected) {
 		case 'Add': 
-			result = val1+val2;
+			result =(val1+val2).toFixed(2);
 			val1 = result;
 			val2 = null;
 			break;
 		case 'Subtract':
-			result = val1-val2;
+			result = (val1-val2).toFixed(2);
 			val1 = result;
 			val2 = null;
 			break;
 		case 'Multiply':
-			result = val1*val2;
+			result = (val1*val2).toFixed(2);
 			val1 = result;
 			val2 = null;
 			break;
 		case 'Divide':
-			result = val1/val2;
+			
+			result = (val1/val2).toFixed(2);
 			val1 = result;
 			val2 = null;
 			break;
